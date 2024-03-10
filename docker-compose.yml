@@ -1,0 +1,19 @@
+version: "3"
+services:
+  angular:
+    build: ./frontend
+    volumes:
+      - ./frontend:/code
+    ports:
+      - "4200:4200"
+    container_name: angular
+    tty: true
+  python:
+    build: ./backend
+    command: bash /code/django_init.sh
+    volumes:
+      - ./backend:/code
+    ports:
+      - "8000:8000"
+    container_name: python-django
+    tty: true
