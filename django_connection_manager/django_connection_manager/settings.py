@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
+    'friends.apps.FriendsConfig',
     'rest_framework',  # added for JWT authentication
     'rest_framework_simplejwt.token_blacklist',  # added for token blacklisting functionality
 ]
