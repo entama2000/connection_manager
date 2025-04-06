@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 
 class Friend(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="friends")
-    first_name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100, blank=False)  # 必須項目にする
     last_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15, blank=True)
     birthday = models.DateField(null=True, blank=True)
-    platform = models.CharField(max_length=100, help_text="SNS種別やプラットフォーム名")
+    platform = models.CharField(max_length=100, help_text="SNS種別やプラットフォーム名", blank=True)  # 任意項目に変更
     contact_info = models.CharField(max_length=200, blank=True)
     last_met_date = models.DateField(null=True, blank=True)
     note = models.TextField(blank=True)
